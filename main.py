@@ -15,7 +15,7 @@ def test_setup():
     global chrome
     chrome = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     yield
-    chrome.quit()
+    chrome.close()
 
 
 
