@@ -28,6 +28,7 @@ def test_yahoo_logo(test_setup):
 
 @allure.description("This test checks if Yahoo logo is loaded and should fail")
 @allure.severity(severity_level="NORMAL")
+@pytest.mark.xfail
 def test_yahoo_logo_fail(test_setup):
     chrome.get("https://www.yahoo.com/")
     assert chrome.find_element(By.XPATH, "yahoo_xpath"), "Yahoo logo not loaded"
