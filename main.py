@@ -24,10 +24,13 @@ def test_setup():
 def test_yahoo_logo(test_setup):
     chrome.get("https://www.yahoo.com/")
     assert chrome.find_element(By.XPATH, yahoo_xpath), "Yahoo logo not loaded"
-    chrome.close()
 
 
-
+@allure.description("This test checks if Yahoo logo is loaded and should fail")
+@allure.severity(severity_level="NORMAL")
+def test_yahoo_logo_fail(test_setup):
+    chrome.get("https://www.yahoo.com/")
+    assert chrome.find_element(By.XPATH, "yahoo_xpath"), "Yahoo logo not loaded"
 
 
 
